@@ -19,11 +19,17 @@ public class PlanetCrudService implements PlanetDaoService{
     @Override
     public void createPlanet(String id,String name) throws SQLException {
        Session session = HibernateConfigurations.getInstance().getSessionFactory().openSession();
-            Transaction transaction = session.beginTransaction();
+       Transaction transaction = session.beginTransaction();
+       boolean b= false;
+       b = id.matches("[A-Z]+[0-9]+");
+        if(b == true) {
             Planet planet = new Planet();
             planet.setId(id);
             planet.setName(name);
             session.persist(planet);
+        }else {
+            System.out.println("Invalid id");
+        }
             transaction.commit();
         }
     @Override

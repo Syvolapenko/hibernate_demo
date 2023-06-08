@@ -21,8 +21,7 @@ public class App {
 //        crudService.removeClient(12l);
 //        System.out.println("crudService.listClients() = " + crudService.listClients());
         PlanetCrudService planetCrudService = new PlanetCrudService();
-
-        planetCrudService.createPlanet("2","nae");
+        planetCrudService.createPlanet("aw2","nae");
 //        System.out.println("planetCrudService.getByIdPlanet(\"VEN2\") = " + planetCrudService.getByIdPlanet("VEN2"));
 //        planetCrudService.updatePlanetByName("PLU6","URANUS");
 //        planetCrudService.removePlanet("PLU6");
