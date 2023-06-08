@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface PlanetDaoService {
     List<Planet> listPlanets();
-    void createPlanet(Planet planet) throws SQLException;
+    void createPlanet(String id,String name) throws SQLException;
     Planet getByIdPlanet(String id) throws SQLException;
     void updatePlanetByName(String id,String name) throws  SQLException;
     void removePlanet(String id) throws SQLException;

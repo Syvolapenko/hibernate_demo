@@ -1,6 +1,5 @@
 package com.goit11.Entity.Planet;
 
-import com.goit11.Entity.Client.Client;
 import com.goit11.configuration.HibernateConfigurations;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -18,15 +17,15 @@ public class PlanetCrudService implements PlanetDaoService{
     }
 
     @Override
-    public void createPlanet(Planet planet) throws SQLException {
-        try(Session session = HibernateConfigurations.getInstance().getSessionFactory().openSession()) {
+    public void createPlanet(String id,String name) throws SQLException {
+       Session session = HibernateConfigurations.getInstance().getSessionFactory().openSession();
             Transaction transaction = session.beginTransaction();
+            Planet planet = new Planet();
+            planet.setId(id);
+            planet.setName(name);
             session.persist(planet);
             transaction.commit();
         }
-        System.out.println("client " + planet.getName()+ " created");
-    }
-
     @Override
     public Planet getByIdPlanet(String id) throws SQLException {
         Planet planet;

@@ -12,7 +12,7 @@ public class App {
 //        new FlywayApplication()
 //                .setup()
 //                .migrate();
-        ClientCrudService crudService = new ClientCrudService();
+//        ClientCrudService crudService = new ClientCrudService();
 
 //        crudService.update(13,"Roman");
 //        denis.setName("Denis");
@@ -22,10 +22,7 @@ public class App {
 //        System.out.println("crudService.listClients() = " + crudService.listClients());
         PlanetCrudService planetCrudService = new PlanetCrudService();
 
-//        Planet pluto = new Planet();
-//        pluto.setId("PLU6");
-//        pluto.setName("Pluto");
-//        planetCrudService.createPlanet(pluto);
+        planetCrudService.createPlanet("2","nae");
 //        System.out.println("planetCrudService.getByIdPlanet(\"VEN2\") = " + planetCrudService.getByIdPlanet("VEN2"));
 //        planetCrudService.updatePlanetByName("PLU6","URANUS");
 //        planetCrudService.removePlanet("PLU6");
