@@ -13,6 +13,8 @@ public class ClientCrudService implements ClientDaoService{
         List<Client> clients;
         try(Session session = HibernateConfigurations.getInstance().getSessionFactory().openSession()) {
             clients = session.createQuery("from Client", Client.class).list();
+
+
         }
         return clients;
     }
@@ -30,11 +32,11 @@ public class ClientCrudService implements ClientDaoService{
     @Override
     public Client getByIdClient(Long id) throws SQLException {
         Client client;
-        try(Session session = HibernateConfigurations.getInstance().getSessionFactory().openSession()) {
-        Transaction transaction = session.beginTransaction();
+        Session session = HibernateConfigurations.getInstance().getSessionFactory().openSession();
         client = session.get(Client.class,id);
-        transaction.commit();
-        }
+//        System.out.println("client.getTickets() = " + client.getTickets());
+        System.out.println(client.getTickets());
+        session.close();
         return client;
     }
 

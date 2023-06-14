@@ -1,31 +1,19 @@
-import com.goit11.Entity.Client.Client;
-import com.goit11.Entity.Client.ClientCrudService;
-import com.goit11.Entity.Planet.Planet;
-import com.goit11.Entity.Planet.PlanetCrudService;
-import com.goit11.Flyway.FlywayApplication;
-
+import com.goit11.Entity.Ticket.TicketCrudService;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.ParseException;
 
 public class App {
-    public static void main(String[] args) throws IOException, SQLException {
-//        new FlywayApplication()
-//                .setup()
-//                .migrate();
-//        ClientCrudService crudService = new ClientCrudService();
-
-//        crudService.update(13,"Roman");
-//        denis.setName("Denis");
-//        crudService.create(denis);
-//        System.out.println("crudService.getById(6L) = " + crudService.getById(6L));
-//        crudService.removeClient(12l);
-//        System.out.println("crudService.listClients() = " + crudService.listClients());
-        PlanetCrudService planetCrudService = new PlanetCrudService();
-        planetCrudService.createPlanet("aw2","nae");
-//        System.out.println("planetCrudService.getByIdPlanet(\"VEN2\") = " + planetCrudService.getByIdPlanet("VEN2"));
-//        planetCrudService.updatePlanetByName("PLU6","URANUS");
-//        planetCrudService.removePlanet("PLU6");
-        System.out.println("planetCrudService.listPlanets() = " + planetCrudService.listPlanets());
-
+    public static void main(String[] args) throws IOException, SQLException, ParseException {
+        TicketCrudService ticketCrudService = new TicketCrudService();
+//          Create
+//      Ticket firstTicket = new Ticket();
+//      ticketCrudService.createTicket(firstTicket,8,"2037-07-23 17:12:48","VEN2","EAR5");
+//          Read
+//      System.out.println(ticketCrudService.getByIdTicket(2L));
+//          Update
+//        ticketCrudService.updateTicket(8L,"2017-07-23 17:12:48",4L);
+//          Delete
+        ticketCrudService.removeTicket(8L);
     }
 }

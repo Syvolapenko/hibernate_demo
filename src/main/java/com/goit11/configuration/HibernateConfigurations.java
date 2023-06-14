@@ -2,6 +2,7 @@ package com.goit11.configuration;
 
 import com.goit11.Entity.Client.Client;
 import com.goit11.Entity.Planet.Planet;
+import com.goit11.Entity.Ticket.Ticket;
 import lombok.Getter;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -21,6 +22,7 @@ public class HibernateConfigurations {
          sessionFactory = new Configuration()
                  .addAnnotatedClass(Planet.class)
                  .addAnnotatedClass(Client.class)
+                 .addAnnotatedClass(Ticket.class)
                  .buildSessionFactory();
     }
     public static HibernateConfigurations getInstance(){

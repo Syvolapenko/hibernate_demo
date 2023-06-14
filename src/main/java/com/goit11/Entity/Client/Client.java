@@ -1,14 +1,14 @@
 package com.goit11.Entity.Client;
 
+import com.goit11.Entity.Ticket.Ticket;
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
-@ToString
-@Table(name="client")
-@Data
+import java.util.ArrayList;
+import java.util.List;
+
+@Table(name = "client")
 @Entity
 @Getter
 @Setter
@@ -17,6 +17,16 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
-    @Column(name= "name",length = 200)
+    @Column(name = "name", length = 200)
     private String name;
+    @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
+    private List<Ticket> tickets = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

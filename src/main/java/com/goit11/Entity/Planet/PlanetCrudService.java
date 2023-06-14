@@ -36,9 +36,7 @@ public class PlanetCrudService implements PlanetDaoService{
     public Planet getByIdPlanet(String id) throws SQLException {
         Planet planet;
         try(Session session = HibernateConfigurations.getInstance().getSessionFactory().openSession()) {
-            Transaction transaction = session.beginTransaction();
             planet = session.get(Planet.class, id);
-            transaction.commit();
         }
         return planet;
     }
